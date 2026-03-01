@@ -63,9 +63,9 @@ program
       }));
 
       // Fetch downloads in parallel
-      await Promise.all(results.map(async (res) => {
+await Promise.all(results.map(async (res) => {
         try {
-          const dlResponse = await fetch(`https://api.npmjs.org/downloads/point/last-week/${res.name}`);
+          const dlResponse = await fetch(`https://api.npmjs.org/downloads/point/last-week/${encodeURIComponent(res.name)}`);
           if (dlResponse.ok) {
             const dlData = await dlResponse.json();
             res.downloads = dlData.downloads.toLocaleString();
@@ -129,8 +129,8 @@ program
         await Promise.all(chunk.map(async (res: any) => {
           try {
             const [weeklyResp, monthlyResp] = await Promise.all([
-              fetch(`https://api.npmjs.org/downloads/point/last-week/${res.name}`),
-              fetch(`https://api.npmjs.org/downloads/point/last-month/${res.name}`)
+              fetch(`https://api.npmjs.org/downloads/point/last-week/${encodeURIComponent(res.name)}`),
+              fetch(`https://api.npmjs.org/downloads/point/last-month/${encodeURIComponent(res.name)}`)
             ]);
             
             if (weeklyResp.ok && monthlyResp.ok) {
@@ -224,7 +224,7 @@ program
         spinner.text = `Checking alternatives for ${chalk.cyan(dep)}...`;
         
         // Fetch package info to get keywords
-        const resp = await fetch(`https://registry.npmjs.org/${dep}`);
+        const resp = await fetch(`https://registry.npmjs.org/${encodeURIComponent(dep)}`);
         if (!resp.ok) continue;
         const data = await resp.json();
         const keywords = data.keywords || [];
