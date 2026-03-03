@@ -3,7 +3,6 @@
 Actionable insights about npm packages directly in your terminal. **npm-trends** provides growth metrics, trending data, and dependency analysis to help you make informed decisions about your project's ecosystem.
 
 [![npm version](https://img.shields.io/npm/v/npm-trends.svg?style=flat-square)](https://www.npmjs.com/package/npm-trends)
-[![npm downloads](https://img.shields.io/npm/dm/npm-trends.svg?style=flat-square)](https://www.npmjs.com/package/npm-trends)
 [![license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/ravvdevv/npm-trends/blob/main/LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
