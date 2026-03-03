@@ -1,6 +1,6 @@
 {
   "name": "npm-trends",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Terminal-native insights for npm packages. Search, track trends, and scan project dependencies with growth metrics.",
   "main": "index.ts",
   "type": "module",
